@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./MultiImageApi.css">
+    <script src="./jquery-3.2.1.min.js"></script>
+    <script src="./MultiImageApi.js"></script>
+    <title>Document</title>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+        $(document)
+            .ajaxStart(function () {
+                $('#fade').show();
+                $('#spinner').show();
+            })
+            .ajaxStop(function () {
+                $('#spinner').hide();
+                $('#fade').hide();
+            })
+    </script>
+</head>
+
+<body>
+    <div id="gray_pannel">
+        <div id="modal-content">
+            <p>閉じる？</p>
+            <p>
+                <a id="modal-close" class="button-link">閉じる</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- start 共通 -->
+    <div id="spinner">
+        <img src="./ajax-loader.gif" />
+    </div>
+    <div>
+        URL：
+        <input type="text" id="ServerUrl" style="width:500px;" value="http://localhost:54076/" />
+    </div>
+    <!-- end 共通 -->
+
+
+    <!-- start APIから取得した画像を表示 -->
+    <div id="imagebox">
+        <button type="button" id="btnMultiImage">JSONで取得</button>
+        <br>
+    </div>
+    <!-- end APIから取得した画像を表示 -->
+
+    <!-- start APIから取得した画像を表示 -->
+    <div id="imagebox2">
+        <button type="button" id="btnMultiImage2">XMLで取得</button>
+        <br>
+    </div>
+    <!-- end APIから取得した画像を表示 -->
+
+        <!-- start APIから取得した画像を表示 -->
+        <div id="imagebox3">
+            <button type="button" id="btnMultiImage3">画像取得</button>
+            <br>
+        </div>
+        <!-- end APIから取得した画像を表示 -->
+    
+
+</body>
+
+</html>
